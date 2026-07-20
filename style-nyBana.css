@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #f8fafc;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.display {
+    min-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+header {
+    width: 100%;
+    text-align: center;
+
+}
+
+.ban-namn input {
+    margin: 5px auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+
+.antal-korgar {
+    margin: 5px;
+}
+.antal-korgar button {
+    border-radius: 50%;
+    height: 2.8em;
+    width: 2.8em;
+    font-weight: bold;
+    color: #f8fafc;
+    border: solid 1.5px #f8fafc;
+    background: linear-gradient(#16a34a, rgba(255, 255, 255, 0.08));
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+button {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Container för alla korgar - nu som ett snyggt 3-kolumners grid */
+.hål-par {
+    width: 100%;
+    max-width: 320px;       /* Håller ihop griddet så det inte blir för brett */
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Skapar exakt 3 lika breda kolumner */
+    gap: 5px;               /* Avstånd mellan rutorna */
+    justify-items: center;  /* Centrerar varje korg-låda i sin grid-ruta */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Lådan för siffra + input (Grid-item) */
+.korg-input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stilen för de kronologiska numren */
+.korg-input-box span {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #f8fafc;
+    font-weight: bold;
+}
+
+/* Den slutgiltiga, hopbakade stilen för par-rutorna */
+.korg-input-box input {
+    max-width: 3.5em;
+    max-height: 2.8em;
+    border: solid 1.5px rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05); /* Halvgenomskinlig mörk */
+    color: #f8fafc;
+    text-align: center;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.korg-input-box input:focus {
+    border-color: #16a34a;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tar bort inbyggda pilar i nummer-fältet (Bara på ett ställe nu!) */
+.korg-input-box input::-webkit-outer-spin-button,
+.korg-input-box input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Centrera par-siffran och ta bort pilar i sifferfältet */
+.hål-par input {
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.knappar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* Bakåt- och Spara-knapparna */
+.back {
+    margin: 5px;
+    width: 4em;
+    height: 4em;
+    border: solid 1.5px #f8fafc;
+    border-radius: 50%;
+    background: linear-gradient(rgba(255, 255, 255, 0.05), #39536d);
+    color: #f8fafc;
+    font-weight: bold;
+}
+
+.spara {
+    margin: 5px;
+    width: 4em;
+    height: 4em;
+    border: solid 1.5px #f8fafc;
+    border-radius: 50%;
+    background: linear-gradient(#16a34a, rgba(255, 255, 255, 0.08));
+    color: #f8fafc;
+    font-weight: bold;
+}

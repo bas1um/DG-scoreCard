@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ny bana</title>
+    <link href="style-nyBana.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="display">
+        <header>
+            <h1>Ny bana</h1>
+        </header>
+
+        <div class="ban-namn">
+            <form action="" data-new-list-form>
+            <input id="ban-namn-input" placeholder="Banans namn" data-new-list-input>
+            </form>
+        </div>
+        <p>Välj antal korgar</p>
+        <div class="antal-korgar">
+            <button onclick="addInputFields(9)">9</button>
+            <button onclick="addInputFields(12)">12</button>
+            <button onclick="addInputFields(18)">18</button>
+        </div>
+
+        <div class="hål-par" id="input-container">
+            <!-- Input fields will be added here -->
+        </div>
+        <div class="knappar">
+            <button class="back" onclick="goBack()">Bakåt</button>
+            <button class="spara" onclick="saveAndRedirect()">Spara</button>
+        </div>
+    </div>
+</body>
+</html>

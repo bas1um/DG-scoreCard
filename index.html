@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG-ScoreCard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- Länka till manifestet -->
+<link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" href="icon.png">
+<!-- Extra touch för att färga statusfältet på Android/iOS direkt -->
+<meta name="theme-color" content="#16a34a">
+</head>
+<body>
+
+    <header>
+        <h1>DG ScoreCard</h1>
+    </header>
+
+    <div class="display">
+        <ul class="addplayer">
+            <div class="player-num">
+                <ion-icon name="person-add-outline"></ion-icon>
+            </div>
+            <li style="--i:0;" class="active"><button>1</button></li>
+            <li style="--i:1;"><button>2</button></li>
+            <li style="--i:2;"><button>3</button></li>
+            <li style="--i:3;"><button>4</button></li>
+            <li style="--i:4;"><button>5</button></li>
+            <li style="--i:5;"><button>6</button></li>
+        </ul>
+
+        <div class="bana">
+            <button class="delete" data-delete-list-button id="deleteCourseBtn">
+                <ion-icon name="trash-outline"></ion-icon>
+            </button>
+            <div id="ban-namn-select" data-lists>
+                <select id="courseDropdown">
+                    <option value="" disabled selected>-- Välj bana --</option>
+                </select>
+            </div>
+            <a href="ny-bana.html"><ion-icon name="add-outline"></ion-icon></a>
+        </div>
+
+        <div class="footer">
+            <div class="spelar-namn" id="spelarNamnContainer">
+                </div>
+            <div class="spela">
+                <a href="spela.html" id="startBtn" class="spela-link">Spela</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

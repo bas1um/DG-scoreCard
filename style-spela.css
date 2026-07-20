@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #f8fafc;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.display {
+    min-width: 90%;
+    max-width: 500px; /* Ser till att det ser bra ut även på bredare skärmar */
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.korg-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.05), #39536d);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.korg-info {
+    text-align: center;
+}
+
+.korg-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.korg-info p {
+    margin: 2px 0 0 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.nav-pil {
+    background: transparent;
+    border: none;
+    color: #f8fafc;
+    font-size: 1.5rem;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+/* Spelarkorten */
+.players-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.player-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(#16a34a46, rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 5px solid #16a34a;
+}
+
+.player-name-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.p-total {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Plus/Minus-knapparna */
+.stepper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stepper button {
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 50%;
+    border: solid 1.5px #f8fafc;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f8fafc;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.stepper .minus {
+    background: linear-gradient(rgba(255, 255, 255, 0.05), #39536d);
+}
+
+.stepper .plus {
+    background: linear-gradient(#16a34a, rgba(255, 255, 255, 0.05));
+}
+
+.current-score {
+    font-size: 1.6rem;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Nedre knapp */
+.avsluta-btn {
+    background: linear-gradient(#ff6b6b, rgba(255, 255, 255, 0.08));
+    color: #f8fafc;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

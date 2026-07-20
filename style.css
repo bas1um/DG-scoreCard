@@ -1,0 +1,270 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #f8fafc;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+button, input, select {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+header {
+    margin-top: 0;
+    text-align: center;
+    padding: 1px;
+}
+
+.display {
+    height: 90%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- DET ROTERANDE HJULET (SPELARVAL) --- */
+.addplayer {
+    margin: 20px auto 0 auto;
+    position: relative;
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: transparent;
+    transition: 0.5s ease;
+}
+
+
+.addplayer.active {
+    background: linear-gradient(#16a34a, rgba(255, 255, 255, 0.03));
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Mittknappen */
+.player-num {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(#16a34a, rgba(255, 255, 255, 0.03));
+    color: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    transition: 0.5s ease;
+    z-index: 20;
+}
+
+
+.player-num.active {
+    transform: rotate(360deg);
+    box-shadow: none;
+    background: #1e293b;
+    color: #f8fafc;
+    z-index: 5;
+}
+
+/* Sifferknapparnas list-element (Startar dolda i mitten) */
+.addplayer li {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    list-style: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    transform: rotate(calc(360deg / 6 * var(--i))) translateX(0px);
+}
+
+/* Utfällt läge */
+.addplayer.active li {
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(calc(360deg / 6 * var(--i))) translateX(95px);
+}
+
+/* Själva sifferknapparna */
+.addplayer li button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.75em;
+    border-radius: 50%;
+    border: #f8fafc solid 2px;
+    background: #16a34a;
+    color: #f8fafc;
+    cursor: pointer;
+    transform: rotate(calc(360deg / -6 * var(--i)));
+    transition: 0.3s ease;
+}
+
+/* Markering för vald knapp */
+.addplayer.active li.active button {
+    background: #f8fafc;
+    color: #16a34a;
+    border-color: #f8fafc;
+    transform: rotate(calc(360deg / -6 * var(--i))) scale(1.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.delete {
+    height: 35px;
+    width: 35px;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: solid 1.5px #f8fafc;
+    background: linear-gradient(#ff6b6b, rgba(255, 255, 255, 0.03));
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* --- BANVÄLJARE --- */
+.bana {
+    margin: 20px auto;
+    width: 280px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#ban-namn-select {
+    width: 70%;
+    height: 35px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+/* Lyser upp kanten i grönt när man väljer bana */
+#ban-namn-select:focus-within {
+    border-color: #16a34a;
+}
+
+#ban-namn-select select {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    padding-left: 10px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Fixar till färgerna på alternativen inuti rullistan */
+#ban-namn-select select option {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.bana a {
+    height: 35px;
+    width: 35px;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: solid 1.5px #f8fafc;
+    background: linear-gradient(#16a34a, rgba(255, 255, 255, 0.08));
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+/* --- FOOTER / GRÖNA KULLAR --- */
+.footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: auto;
+}
+
+.spelar-namn {
+    grid-column: span 2;
+    width: 100%;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    min-height: 100px;
+}
+
+.spelar-namn input {
+    margin: auto;
+    width: 85%;
+    height: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: double 2px #f8fafc;
+    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 1.2rem;
+    outline: none;
+    text-shadow: black 10px 0 10px;
+}
+
+.spelar-namn input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.spela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: black 10px 0 10px;
+}
+
+.spela-link {
+    text-decoration: none;
+    color: #f8fafc;
+    font-size: 2.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    cursor: pointer;
+}
+
+/* RESPONSIVITET */
+@media (max-width: 600px) {
+    .spelar-namn {
+        grid-column: span 3;
+        border-radius: 25% 25% 0 0;
+    }
+    .spela {
+        grid-column: span 3;
+        padding-bottom: 25px;
+        border-radius: 0;
+    }
+    .addplayer {
+        width: 175px;
+        height: 175px;
+    }
+    .addplayer.active li {
+        transform: rotate(calc(360deg / 6 * var(--i))) translateX(80px);
+    }
+    .player-num.active {
+        box-shadow: none;
+        background: #1e293b;
+    }
+}
